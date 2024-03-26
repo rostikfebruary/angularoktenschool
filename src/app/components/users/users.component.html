@@ -1,0 +1,3 @@
+<app-user *ngFor="let user of users" [user]="user" (catcher)="getUserDetails($event)" ></app-user>
+
+<app-user-details [usersDetails]="usersDetails" *ngIf="usersDetails"></app-user-details>
