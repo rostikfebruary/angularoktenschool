@@ -4,6 +4,8 @@ import {UserService} from "../../services/user.service";
 import {UserComponent} from "../user/user.component";
 import {NgFor, NgIf} from "@angular/common";
 import {UserDetailsComponent} from "../user-details/user-details.component";
+import {IPost} from "../../interfaces/post.interface";
+import {UsersPostComponent} from "../users-post/users-post.component";
 
 
 @Component({
@@ -13,24 +15,31 @@ import {UserDetailsComponent} from "../user-details/user-details.component";
     UserComponent,
     NgFor,
     UserDetailsComponent,
-    NgIf
+    NgIf,
+    UsersPostComponent,
+
   ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
 
-export class UsersComponent implements OnInit{
-  users:IUser[]
-  usersDetails:IUser
+export class UsersComponent implements OnInit {
+  users: IUser[]
+  usersDetails: IUser
+  userPost: IPost
 
-  constructor(private userService:UserService) {
+  constructor(private userService: UserService) {
   }
 
- ngOnInit() {
-   this.userService.getAll().subscribe(value => this.users = value)
- }
+  ngOnInit() {
+    this.userService.getAll().subscribe(value => this.users = value)
+  }
 
- getUserDetails(user:IUser){
+  getUserDetails(user: IUser) {
     this.usersDetails = user
- }
+  }
+
+  getUserPost(post: IPost) {
+    this.userPost = post
+  }
 }

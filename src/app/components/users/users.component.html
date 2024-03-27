@@ -1,3 +1,4 @@
-<app-user *ngFor="let user of users" [user]="user" (catcher)="getUserDetails($event)" ></app-user>
+<app-user *ngFor="let user of users" [user]="user" (catcher)="getUserDetails($event)" (harder)="getUserPost($event)" ></app-user>
 
+<app-users-post [userPost] = "userPost" *ngIf="userPost"></app-users-post>
 <app-user-details [usersDetails]="usersDetails" *ngIf="usersDetails"></app-user-details>
