@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {IPost} from "../../interfaces/post.interface";
 
+
 @Component({
   selector: 'app-users-post',
   standalone: true,

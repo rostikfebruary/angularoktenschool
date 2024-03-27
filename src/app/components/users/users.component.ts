@@ -38,8 +38,4 @@ export class UsersComponent implements OnInit {
   getUserDetails(user: IUser) {
     this.usersDetails = user
   }
-
-  getUserPost(post: IPost) {
-    this.userPost = post
-  }
 }

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IPost} from "../../interfaces/post.interface";
 
 @Component({
@@ -14,4 +14,10 @@ export class PostComponent {
   @Input()
   post:IPost;
 
+  @Output()
+  check = new EventEmitter<IPost>()
+
+  checkPost():void {
+    this.check.emit(this.post)
+  }
 }
